@@ -18,7 +18,12 @@ export function App() {
       // handle error
       console.log(error)
     }
-    return (
+  }
+
+  return (
+    <>
+      <h1>Crypto Tracker</h1>
+      <button onClick={() => listOfCoins()}>Get Coins</button>
       <div>
         {coinData.data.map((coin: coin) => (
           <div key={coin.symbol.toString()}>
@@ -33,13 +38,6 @@ export function App() {
           </div>
         ))}
       </div>
-    )
-  }
-
-  return (
-    <div>
-      <h1>Crypto Tracker</h1>
-      <button onClick={() => listOfCoins()}>Get Coins</button>
-    </div>
+    </>
   )
 }
