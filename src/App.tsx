@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { coin } from './types'
 
 export function App() {
-  const [coindata, setCoinData] = useState({
+  const [coinData, setCoinData] = useState({
     data: [],
   }) /*    using { data: [] } as a placeholder for the data that will be fetched.
            Figuring out how to structure this was a bit of a challenge.            */
 
-  console.log(coindata)
+  console.log(coinData)
 
   async function listOfCoins() {
     try {
@@ -20,7 +20,7 @@ export function App() {
     }
     return (
       <div>
-        {coindata.data.map((coin: coin) => (
+        {coinData.data.map((coin: coin) => (
           <div key={coin.symbol.toString()}>
             <h2>{coin.name}</h2>
             <p>Rank: {coin.rank}</p>
@@ -39,7 +39,7 @@ export function App() {
   return (
     <div>
       <h1>Crypto Tracker</h1>
-      <button onClick={listOfCoins()}>Get Coins</button>
+      <button onClick={() => listOfCoins()}>Get Coins</button>
     </div>
   )
 }
